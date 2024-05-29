@@ -20,12 +20,12 @@ const server = http.createServer((req, res)=>{
 
       // todo 단위테스트 변경 객체 속에 객체 집어넣어서 json으로 밀어내기
 
-      // fs.writeFile(`storage/UserId.json`, body, (err)=>{
-      //   if(err){
-      //     console.log(err)
-      //   }
-      // })
-      // console.log(body)
+      fs.writeFile(`storage/UserId.json`, body, (err)=>{
+        if(err){
+          console.log(err)
+        }
+      })
+      console.log(body)
     })
     // console.log(body)
   }
