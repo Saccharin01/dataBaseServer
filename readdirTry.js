@@ -27,6 +27,9 @@ const server = http.createServer((req, res)=>{
       //   }
       // })
       fs.readdir(`storage`,(err, data)=>{
+        // ! caution
+        //! 스토리지 폴더에 파일이 늘지 않음. readdir로 읽어온다고 해도 파일이 생기지 않으면 길이값의 의미가..
+        //? 연산 시키면 되는거 아님?
         try {
           console.log(`check out this on readdir: `,data)
           fs.writeFile(`storage/userId.json`, body, (err,data)=>{
