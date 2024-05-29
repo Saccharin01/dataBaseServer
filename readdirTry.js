@@ -13,8 +13,8 @@ const server = http.createServer((req, res)=>{
       // console.log(chunk)
       body += chunk.toString();
       let jsondata = JSON.stringify(body, null, 2)
-      // console.log(jsondata)
-      // console.log(container) // todo 같이 지워야 함
+      console.log(jsondata)
+      console.log(container) // todo 같이 지워야 함
       // todo submit data가 많아질 경우에 대한 json 폼팩터가 필요하진 않은지?
     });
     req.on('end', ()=>{
@@ -28,7 +28,23 @@ const server = http.createServer((req, res)=>{
       // })
       fs.readdir(`storage`,(err, data)=>{
         try {
-          console.log(`check out this: `,data)
+          console.log(`check out this on readdir: `,data)
+          fs.writeFile(`storage/userId.json`, body, (err,data)=>{
+            if(data){
+              console.log(!!!+data)
+            }else{
+              console.log(`check out this error!!!! : `,err)
+
+            }
+          })
+
+
+
+
+
+
+
+
         } catch (error) {
           console.log(err)
           
