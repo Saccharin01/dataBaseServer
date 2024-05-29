@@ -34,7 +34,7 @@ const server = http.createServer((req, res)=>{
           console.log(`check out this on readdir: `,data)
           for(let i = 0; i < data.length; i++){
 
-            fs.writeFile(`storage/userId.json`, body, (err,data)=>{
+            fs.writeFile(`storage/userId${i+1}.json`, body, (err,data)=>{
               if(err){
                 console.log(`check out this error : `,err)
               }else{
