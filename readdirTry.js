@@ -32,14 +32,18 @@ const server = http.createServer((req, res)=>{
         //? 연산 시키면 되는거 아님?
         try {
           console.log(`check out this on readdir: `,data)
-          fs.writeFile(`storage/userId.json`, body, (err,data)=>{
-            if(err){
-              console.log(`check out this error : `,err)
-            }else{
-              console.log(`!!!`+data)
-              // * fs로 파일 작성은 문제없이 구동하고 있음. 단위 로직 조정 필요
-            }
-          })
+          for(let i = 0; i < data.length; i++){
+
+            fs.writeFile(`storage/userId.json`, body, (err,data)=>{
+              if(err){
+                console.log(`check out this error : `,err)
+              }else{
+                console.log(`!!!`+data)
+                // * fs로 파일 작성은 문제없이 구동하고 있음. 단위 로직 조정 필요
+              }
+            })
+            
+          }
 
 
 
