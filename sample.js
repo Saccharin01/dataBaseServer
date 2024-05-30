@@ -1,14 +1,16 @@
-// function test(a){
+function test(a){
   
-//   const userinfo = {
-//     a : {
-//       "userPW":"",
-//       "userEmail":"",
-//       "userPhoneNum":"",
-//     }
-//   }
+  const userinfo = {
+    a : {
+      "userPW":"",
+      "userEmail":"",
+      "userPhoneNum":"",
+    }
+  }
 
-// }
+}
+
+
 let userinfo ={};
 
 
@@ -25,3 +27,24 @@ function test(a){
 }
 
 function a(){}
+
+
+let userinfo2 = {
+  'userid':{
+    "pw":"",
+    "pwConfirm":""
+  },
+  'userid':{
+    "pw":"",
+    "pwConfirm":""
+  },
+  'userid':{
+    "pw":"",
+    "pwConfirm":""
+  },
+  'userid':{
+    "pw":"",
+    "pwConfirm":""
+  }
+  
+}

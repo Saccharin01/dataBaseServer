@@ -39,7 +39,8 @@ const server = http.createServer((req, res)=>{
       console.log(container)
       console.log(typeof(body))
       console.log(typeof(parseData))
-      console.log(Object.keys(parseData))
+      console.log(Object.values(parseData))
+      console.log(Object.entries(parseData))
 
 
       // todo 같이 지워야 함
