@@ -56,11 +56,11 @@ const server = http.createServer((req, res)=>{
 
 
 
-        } catch (error) {
-          console.log(err)
+      //   } catch (error) {
+      //     console.log(err)
           
-        }
-      })
+      //   }
+      // })
 
 
       console.log(body)
