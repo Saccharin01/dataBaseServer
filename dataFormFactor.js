@@ -49,6 +49,7 @@ const server = http.createServer((req, res)=>{
       console.log(typeof(inputId))
       container.inputId = parseData
 
+      container[Object.values(parseData)[0]] = parseData
 
       console.log(container)
 
@@ -60,13 +61,15 @@ const server = http.createServer((req, res)=>{
         }
         `
       }
+    //  JSON.stringify(container)
+     
 
 
 
 
 
 
-      fs.appendFile(`parseData.json`, body, (err)=>{
+      fs.appendFile(`parseData.json`, JSON.stringify(container), (err)=>{
         console.log(err);
       })
 
