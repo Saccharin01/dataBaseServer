@@ -30,8 +30,9 @@ const server = http.createServer((req, res)=>{
 
 
     let body = ""
-    let container = {}
+    let condition;
     req.on('data', (chunk)=>{
+      let container = {}
       // console.log(chunk)
       body += chunk.toString();
       // let parseData = JSON.parse(JSON.stringify(body, null, 2))
@@ -47,20 +48,19 @@ const server = http.createServer((req, res)=>{
       let inputId = Object.values(parseData)[0]
       console.log(inputId)
       console.log(typeof(inputId))
-      container.inputId = parseData
 
-      container[Object.values(parseData)[0]] = parseData
+      
+      
+      if(condition){
+        container[Object.values(parseData)[0]] = parseData
+      }else{
 
-      console.log(container)
+        container[Object.values(parseData)[0]] = parseData
 
-      function a(a,b){
-        return `{
-          ${a}:{
-            ${a} : ${b}
-          }
-        }
-        `
+        condition = container[Object.values(parseData)[0]] = parseData
       }
+      
+
     //  JSON.stringify(container)
      
 
@@ -69,8 +69,10 @@ const server = http.createServer((req, res)=>{
 
 
 
-      fs.appendFile(`parseData.json`, JSON.stringify(container), (err)=>{
-        console.log(err);
+      fs.writeFile(`parseData.json`, JSON.stringify(container, null, 2), (err)=>{
+        if(err){
+          console.log(err)
+        }
       })
 
 
