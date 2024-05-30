@@ -11,7 +11,7 @@ const server = http.createServer((req, res)=>{
 
 
 
-    function containerBuild(){
+    function containerBuild( ){
 
       let container = {
         "user1": {
@@ -34,6 +34,17 @@ const server = http.createServer((req, res)=>{
       // console.log(chunk)
       body += chunk.toString();
       let jsondata = JSON.stringify(body, null, 2)
+      let parsedata = JSON.parse(jsondata)
+
+        console.log(Object.keys(body))
+        console.log(`줄바꿈`)
+
+        console.log(Object.values(parsedata))
+        console.log(typeof(parsedata))
+
+
+
+
       console.log(jsondata)
       console.log(container) // todo 같이 지워야 함
       // todo submit data가 많아질 경우에 대한 json 폼팩터가 필요하진 않은지?
