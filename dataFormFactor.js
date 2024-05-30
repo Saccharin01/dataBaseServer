@@ -38,16 +38,16 @@ const server = http.createServer((req, res)=>{
        * todo 해당 과정은 리터럴 작업을 최대한 배제해야 함
        */
 
-      fs.readdir(`storage`,(err, data)=>{
-        try {
-          console.log(`check out this on readdir: `,data)
-          fs.writeFile(`storage/userId.json`, body, (err,data)=>{
-            if(err){
-              console.log(`check out this error : `,err)
-            }else{
-              console.log(`!!!`+data)
-            }
-          })
+      // fs.readdir(`storage`,(err, data)=>{
+      //   try {
+      //     console.log(`check out this on readdir: `,data)
+      //     fs.writeFile(`storage/userId.json`, body, (err,data)=>{
+      //       if(err){
+      //         console.log(`check out this error : `,err)
+      //       }else{
+      //         console.log(`!!!`+data)
+      //       }
+      //     })
 
 
 
