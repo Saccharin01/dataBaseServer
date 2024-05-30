@@ -42,8 +42,33 @@ const server = http.createServer((req, res)=>{
       console.log(typeof(parseData))
       console.log(Object.values(parseData))
       console.log(Object.entries(parseData))
-      container.parseData
       console.log(container)
+
+      let inputId = Object.values(parseData)[0]
+      console.log(inputId)
+      console.log(typeof(inputId))
+      container.inputId = parseData
+
+
+      console.log(container)
+
+      function a(a,b){
+        return `{
+          ${a}:{
+            ${a} : ${b}
+          }
+        }
+        `
+      }
+
+
+
+
+
+
+      fs.appendFile(`parseData.json`, body, (err)=>{
+        console.log(err);
+      })
 
 
       // todo 같이 지워야 함
