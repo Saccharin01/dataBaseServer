@@ -33,10 +33,14 @@ const server = http.createServer((req, res)=>{
     req.on('data', (chunk)=>{
       // console.log(chunk)
       body += chunk.toString();
-      let jsondata = JSON.stringify(body, null, 2)
       let parseData = JSON.parse(JSON.stringify(body, null, 2))
+      for(let parseData in object){
+        console.log(`${parseData}: ${object[parseData]}`)
+      }
       console.log(parseData)
-      console.log(container) // todo 같이 지워야 함
+      console.log(container)
+      console.log(parseData)
+      // todo 같이 지워야 함
       // todo submit data가 많아질 경우에 대한 json 폼팩터가 필요하진 않은지?
     });
     req.on('end', ()=>{
