@@ -1,7 +1,1 @@
-{
-  "textarea":"asd",
-  "pw":"ffffff",
-  "pwConfirm":"123123123",
-  "email":"",
-  "phoneNum":"1231231231231"
-}
+{"userId":"Test1","pw":"Test1111","pwConfirm":"Test1111","email":"","phoneNum":"Test1"}

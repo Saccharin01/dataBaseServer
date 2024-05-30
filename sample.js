@@ -9,9 +9,12 @@
 //   }
 
 // }
+let userinfo ={};
+
+
 function test(a){
   
-  const userinfo = {
+  let userinfo = {
     a : {
       "userPW":"",
       "userEmail":"",
@@ -20,3 +23,5 @@ function test(a){
   }
 
 }
+
+function a(){}
