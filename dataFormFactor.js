@@ -30,23 +30,53 @@ const server = http.createServer((req, res)=>{
 
 
     let body = ""
+    let condition;
     req.on('data', (chunk)=>{
+      let container = {}
       // console.log(chunk)
       body += chunk.toString();
-      let jsondata = JSON.stringify(body, null, 2)
-      let parsedata = JSON.parse(jsondata)
+      // let parseData = JSON.parse(JSON.stringify(body, null, 2))
+      let parseData = JSON.parse(body)
+      // console.log(parseData)
+      console.log(container)
+      console.log(typeof(body))
+      console.log(typeof(parseData))
+      console.log(Object.values(parseData))
+      console.log(Object.entries(parseData))
+      console.log(container)
 
-        console.log(Object.keys(body))
-        console.log(`줄바꿈`)
+      let inputId = Object.values(parseData)[0]
+      console.log(inputId)
+      console.log(typeof(inputId))
 
-        console.log(Object.values(parsedata))
-        console.log(typeof(parsedata))
+      
+      
+      if(condition){
+        container[Object.values(parseData)[0]] = parseData
+      }else{
+
+        container[Object.values(parseData)[0]] = parseData
+
+        condition = container[Object.values(parseData)[0]] = parseData
+      }
+      
+//
+    //  JSON.stringify(container)
+     
 
 
 
 
-      console.log(jsondata)
-      console.log(container) // todo 같이 지워야 함
+
+
+      fs.writeFile(`parseData.json`, JSON.stringify(container, null, 2), (err)=>{
+        if(err){
+          console.log(err)
+        }
+      })
+
+
+      // todo 같이 지워야 함
       // todo submit data가 많아질 경우에 대한 json 폼팩터가 필요하진 않은지?
     });
     req.on('end', ()=>{
