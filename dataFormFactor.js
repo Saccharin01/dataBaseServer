@@ -30,6 +30,7 @@ const server = http.createServer((req, res)=>{
 
 
     let body = ""
+    let container = {}
     req.on('data', (chunk)=>{
       // console.log(chunk)
       body += chunk.toString();
@@ -41,6 +42,8 @@ const server = http.createServer((req, res)=>{
       console.log(typeof(parseData))
       console.log(Object.values(parseData))
       console.log(Object.entries(parseData))
+      container.parseData
+      console.log(container)
 
 
       // todo 같이 지워야 함
