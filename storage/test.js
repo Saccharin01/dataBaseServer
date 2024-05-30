@@ -1,0 +1,6 @@
+const table = {
+  'user1' : {
+    
+  }
+
+}

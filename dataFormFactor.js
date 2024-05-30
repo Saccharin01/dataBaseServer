@@ -8,6 +8,23 @@ const server = http.createServer((req, res)=>{
   let container = {}; // todo 지워야 함
   if(req.method === 'POST' && `/`){
     console.log(req.url)
+
+
+
+    function containerBuild(){
+
+      let container = {
+        "user1": {
+  
+        }
+      }
+
+
+    }
+
+
+
+
     let body = ""
     req.on('data', (chunk)=>{
       // console.log(chunk)
