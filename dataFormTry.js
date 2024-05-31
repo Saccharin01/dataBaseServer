@@ -24,6 +24,8 @@ const server = http.createServer((req, res)=>{
             }
           })
 
+        }else{ //?파일이 있다면 data
+
         }
       })
 
