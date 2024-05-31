@@ -30,10 +30,11 @@ const server = http.createServer((req, res)=>{
 
 
     let body = ""
+    let condition;
+    let container = []
+    console.log(condition)
     req.on('data', (chunk)=>{
-      let condition;
       // let container = {}
-      let container = []
       // console.log(chunk)
       body += chunk.toString();
       // let parseData = JSON.parse(JSON.stringify(body, null, 2))
@@ -51,7 +52,7 @@ const server = http.createServer((req, res)=>{
       console.log(typeof(inputId))
 
 
-      container.push(parseData)
+      // container.push(parseData)
       console.log(condition)
 
 
