@@ -55,15 +55,9 @@ const server = http.createServer((req, res)=>{
       // container.push(parseData)
       console.log(condition)
 
-
-      console.log(container)
-      if(condition){
-        condition.push(parseData)
-      }else{
-        container.push(parseData)
-        condition = container
-      }
+      // condition.push(parseData)
       
+      container.push(parseData)
       console.log(container)
       
       // if(condition){
@@ -92,8 +86,11 @@ const server = http.createServer((req, res)=>{
 
       // todo 같이 지워야 함
       // todo submit data가 많아질 경우에 대한 json 폼팩터가 필요하진 않은지?
+      condition = container
+      console.log(condition)
     });
     req.on('end', ()=>{
+      console.log(condition)
 
       // todo 단위테스트 변경 객체 속에 객체 집어넣어서 json으로 밀어내기
 
