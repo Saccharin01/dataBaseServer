@@ -5,6 +5,7 @@ const fs = require(`fs`)
 const htmlTemplate = require(`../../module/module.HTMLtemplate`)
 
 const server = http.createServer((req, res)=>{
+  console.log(req.method)
   console.log(req.url)
   if(req.url === `/`){
     req.on(`data`,(chunk)=>{
@@ -50,10 +51,10 @@ const server = http.createServer((req, res)=>{
 
         }
       })
-      
-      res.writeHead(200,
-      {"content-Type": "application/json, charset=UTF-8"})
-      res.end()
+
+      // res.writeHead(200,
+      // {"content-Type": "application/json, charset=UTF-8"})
+      // res.end()
 
       // console.log(chunk)
       // let container = [];
