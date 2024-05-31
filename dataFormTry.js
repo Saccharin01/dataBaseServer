@@ -25,10 +25,20 @@ const server = http.createServer((req, res)=>{
           })
 
         }else{ //?파일이 있다면 data
-          console.log(JSON.parse(data))
-          console.log(typeof(JSON.parse(data)))
-          
-          console.log(Array.isArray(JSON.parse(data)))
+          // console.log(JSON.parse(data))
+          // console.log(typeof(JSON.parse(data)))
+          // console.log(Array.isArray(JSON.parse(data)))
+          try {
+
+            let origindata = JSON.parse(data)
+            console.log(origindata)
+            console.log(Array.isArray(origindata))
+            let userinpt = JSON.parse(chunk)
+            console.log(userinpt)
+
+          } catch (error) {
+            
+          }
 
         }
       })
