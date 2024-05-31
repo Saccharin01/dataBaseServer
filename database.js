@@ -50,6 +50,10 @@ const server = http.createServer((req, res)=>{
 
         }
       })
+      
+      res.writeHead(200,
+      {"content-Type": "application/json, charset=UTF-8"})
+      res.end()
 
       // console.log(chunk)
       // let container = [];
