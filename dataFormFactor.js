@@ -35,6 +35,16 @@ const server = http.createServer((req, res)=>{
       
 
  
+      fs.readFile(`parseData.json`, (err,data)=>{
+        if(err){
+          console.log(err)
+        }else{
+          let parsed = JSON.parse(data)
+          console.log(parsed)
+          parsed.push(container)
+
+        }
+      })
 
 
       fs.writeFile(`parseData.json`, JSON.stringify(container, null, 2), (err)=>{
