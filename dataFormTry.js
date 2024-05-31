@@ -35,6 +35,9 @@ const server = http.createServer((req, res)=>{
             console.log(Array.isArray(origindata))
             let userinpt = JSON.parse(chunk)
             console.log(userinpt)
+            console.log(typeof(userinpt))
+            origindata.push(userinpt)
+            console.log(origindata)
 
           } catch (error) {
             
