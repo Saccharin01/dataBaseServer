@@ -5,58 +5,20 @@ const fs = require(`fs`)
 const htmlTemplate = require(`../../module/module.HTMLtemplate`)
 
 const server = http.createServer((req, res)=>{
-  if(req.method === 'POST' && `/`){
-    console.log(req.url)
-
-    let body = ""
-    let condition;
-    console.log(condition)
-    req.on('data', (chunk)=>{
-      let container = []
-      body += chunk.toString();
-      let parseData = JSON.parse(body)
-
-
-      let inputId = Object.values(parseData)[0]
-      console.log(inputId)
-      console.log(typeof(inputId))
-
-
-      console.log(condition)
-      container.push(parseData)
-      console.log(container)
-      
-
- 
-      fs.readFile(`parseData.json`, (err,data)=>{
-        if(err){
-          console.log(err)
-        }else{
-          let parsed = JSON.parse(data)
-          console.log(parsed)
-          parsed.push(container)
-
-        }
-      })
-
-
-      fs.writeFile(`parseData.json`, JSON.stringify(container, null, 2), (err)=>{
-        if(err){
-          console.log(err)
-        }
-      })
-
-
-
-    });
-
-    req.on('end', ()=>{
-      console.log(condition)
-
-      console.log(body)
+  console.log(req.url)
+  if(req.url === `/`){
+    fs.readFile(`parseData.json`,(err,data)=>{
+      try {
+        console.log(`passed : ${data}`)
+        
+      } catch (error) {
+        console.log(`caution : ${err}`)
+      }
     })
-  }
+  };
+
 })
+
 let PORT = 8088
 server.listen(`${PORT}`)
 console.log(`server running on: http://localhost:${PORT}/`)
