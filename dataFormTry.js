@@ -12,6 +12,8 @@ const server = http.createServer((req, res)=>{
       let container = [];
       let parseData = JSON.parse(chunk);
       console.log(parseData)
+      container.push(JSON.parse(chunk));
+      console.log(container)
     });
     // fs.readFile(`parseData.json`,(err,data)=>{
     //   if(err){
