@@ -7,14 +7,24 @@ const htmlTemplate = require(`../../module/module.HTMLtemplate`)
 const server = http.createServer((req, res)=>{
   console.log(req.url)
   if(req.url === `/`){
-    fs.readFile(`parseData.json`,(err,data)=>{
-      try {
-        console.log(`passed : ${data}`)
-        
-      } catch (error) {
-        console.log(`caution : ${err}`)
-      }
-    })
+    req.on(`data`,(chunk)=>{
+      console.log(chunk)
+    });
+    // fs.readFile(`parseData.json`,(err,data)=>{
+    //   if(err){
+
+    //     console.log(`caution : ${err}`)
+
+    //     req.on(`data`, (chunk)=>{
+
+    //       let container = [];
+    //       console.log(chunk)
+
+    //     })
+    //   }else{
+    //     console.log(`passed : ${data}`)
+    //   }
+    // })
   };
 
 })
