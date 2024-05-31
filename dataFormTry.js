@@ -5,7 +5,6 @@ const fs = require(`fs`)
 const htmlTemplate = require(`../../module/module.HTMLtemplate`)
 
 const server = http.createServer((req, res)=>{
-  let container = {}; // todo 지워야 함
   if(req.method === 'POST' && `/`){
     console.log(req.url)
 
@@ -17,12 +16,6 @@ const server = http.createServer((req, res)=>{
       body += chunk.toString();
       let parseData = JSON.parse(body)
 
-      // console.log(container)
-      // console.log(typeof(body))
-      // console.log(typeof(parseData))
-      // console.log(Object.values(parseData))
-      // console.log(Object.entries(parseData))
-      // console.log(container)
 
       let inputId = Object.values(parseData)[0]
       console.log(inputId)
