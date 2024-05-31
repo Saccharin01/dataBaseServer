@@ -39,6 +39,14 @@ const server = http.createServer((req, res)=>{
           console.log(err)
         }else{
 
+          let readData = toString(data)
+          console.log(readData)
+          
+          // fs.writeFile(`parseData.json`, JSON.stringify(data, null, 2), (err)=>{
+          //   if(err){
+          //     console.log(err)
+          //   }
+          // })
 
           console.log(data)
         }
@@ -51,11 +59,6 @@ const server = http.createServer((req, res)=>{
       //   }
       // })
 
-      fs.writeFile(`parseData.json`, JSON.stringify(container, null, 2), (err)=>{
-        if(err){
-          console.log(err)
-        }
-      })
 
 
       condition = container
