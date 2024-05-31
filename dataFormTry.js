@@ -25,6 +25,10 @@ const server = http.createServer((req, res)=>{
           })
 
         }else{ //?파일이 있다면 data
+          console.log(JSON.parse(data))
+          console.log(typeof(JSON.parse(data)))
+          
+          console.log(Array.isArray(JSON.parse(data)))
 
         }
       })
