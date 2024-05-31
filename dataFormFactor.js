@@ -11,9 +11,9 @@ const server = http.createServer((req, res)=>{
 
     let body = ""
     let condition;
-    let container = []
     console.log(condition)
     req.on('data', (chunk)=>{
+      let container = []
       body += chunk.toString();
       let parseData = JSON.parse(body)
 
@@ -34,35 +34,17 @@ const server = http.createServer((req, res)=>{
       console.log(container)
       
 
-      fs.readFile(`parseData.json`, (err,data)=>{
+ 
+
+
+      fs.writeFile(`parseData.json`, JSON.stringify(container, null, 2), (err)=>{
         if(err){
           console.log(err)
-        }else{
-
-          let readData = toString(data)
-          console.log(readData)
-          
-          // fs.writeFile(`parseData.json`, JSON.stringify(data, null, 2), (err)=>{
-          //   if(err){
-          //     console.log(err)
-          //   }
-          // })
-
-          console.log(data)
         }
       })
 
 
-      // fs.writeFile(`parseData.json`, JSON.stringify(container, null, 2), (err)=>{
-      //   if(err){
-      //     console.log(err)
-      //   }
-      // })
 
-
-
-      condition = container
-      console.log(condition)
     });
 
     req.on('end', ()=>{
