@@ -1,34 +1,44 @@
 class UserInfo{
   constructor(data){
-    this.userId = data.userId;
-    this.userPw = data.pw;
-    this.Email = data.email;
-    this.PhoneNum = data.phoneNum
+    if(typeof(data)==='object'){
+      this.userId = data.userId;
+      this.userPw = data.pw;
+      this.Email = data.email;
+      this.PhoneNum = data.phoneNum
+    }
+  }
+  set data(value){
+    if(typeof(value)==='object'){
+      this._data = value;
+    } else{
+      console.error(`Argument Type error : Argument must be Object`)
+    }
   }
 }
 
 function jsonFS(data){
-  let container = {};
-  let index = 0;
+  let container = [];
+  let index = 1;
+  index++
   let prop = new UserInfo(data)
   // let result = container[index++] = prop
   return container[index] = prop
 }
 
 
+let data = ""
 
 
 
 
 
-
-let data = {
-  email:'',
-  phoneNum:'ㅁㄴㅇㄹ',
-  pw:'ㅁㄴㅇㄹ',
-  pwConfirm:'ㅁㄴㅇㄹ',
-  userId:'ㅁㄴㅇㄹ'
-}
+// let data = {
+//   email:'',
+//   phoneNum:'ㅁㄴㅇㄹ',
+//   pw:'ㅁㄴㅇㄹ',
+//   pwConfirm:'ㅁㄴㅇㄹ',
+//   userId:'ㅁㄴㅇㄹ'
+// }
 
 jsonFS(data)
 console.log(jsonFS(data))
