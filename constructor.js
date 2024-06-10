@@ -1,18 +1,19 @@
 class UserInfo{
-  constructor(id,pw,Email,PhoneNum){
-    this.userId = id;
-    this.userPw = pw;
-    this.Email = Email;
-    this.PhoneNum = PhoneNum
+  constructor(data){
+    this.userId = data.userId;
+    this.userPw = data.pw;
+    this.Email = data.email;
+    this.PhoneNum = data.phoneNum
   }
 }
 let data = {
-  'email':'',
-'phoneNum':'ㅁㄴㅇㄹ',
-'pw':'ㅁㄴㅇㄹ',
-'pwConfirm':'ㅁㄴㅇㄹ',
-'userId':'ㅁㄴㅇㄹ'
+  email:'',
+  phoneNum:'ㅁㄴㅇㄹ',
+  pw:'ㅁㄴㅇㄹ',
+  pwConfirm:'ㅁㄴㅇㄹ',
+  userId:'ㅁㄴㅇㄹ'
 }
+console.log(data.phoneNum)
 let test = new UserInfo(data)
 
 console.log(test)
